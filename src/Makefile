@@ -46,7 +46,7 @@ compile_tests: build_library1
 	$(CC) $(test_path)s21_test_tan.c -L. s21_math.a $(CHECKFLAGS)  $(GCOVFLAGS) -o s21_tan_test
 
 st: clean
-	make -s -i test | grep "leonardm\|monroebu\|tilmapat". #-i не останавливает вып команд после ошибки, #-s silent
+	make -s -i test | grep "leonardm\|monroebu\|tilmapat" #-i не останавливает вып команд после ошибки, #-s silent
 	make -s clean
 
 
@@ -76,7 +76,6 @@ gcov_report: clean  test
 # gcov_report: clean test
 # 	gcov $(FUNC_FILES_C)
 # 	~/.local/bin/gcovr -r . --html --html-details -o s21_math.html
-# 	open s21_math.html
 
 	
 gcov: gcov_report
